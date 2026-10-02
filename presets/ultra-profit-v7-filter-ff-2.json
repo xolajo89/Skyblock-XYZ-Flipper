@@ -1,0 +1,19 @@
+{
+  "whitelistOnly": true,
+  "blacklist": [],
+  "whitelist": {
+    "ENCHANTED_SHARK_FIN": {},
+    "ENCHANTED_FERMENTED_SPIDER_EYE": {},
+    "GOBLIN_EGG_RED": {},
+    "JUNGLE_KEY": {},
+    "SOULFLOW": {},
+    "FIGSTONE": {},
+    "CHOCOBERRY": {},
+    "STRONG_FRAGMENT": {},
+    "FLORAL_GELATIN": {},
+    "SORROW": {},
+    "BLUE_RING": {},
+    "FUMING_POTATO_BOOK": {}
+  },
+  "selectiveBuys": {}
+}

@@ -1,0 +1,17 @@
+{
+  "whitelistOnly": true,
+  "blacklist": [],
+  "whitelist": {
+    "VERY_CRUDE_GABAGOOL": {},
+    "FLEXBONE": {},
+    "JUNGLE_KEY": {},
+    "SHARD_HIDEONLEAF": {},
+    "NULL_OVOID": {},
+    "SHARD_DOOMSPIRAL": {},
+    "SHARD_VIPER": {},
+    "CARROT_ZEST": {},
+    "SALTED_SUNFLOWER_SEEDS": {},
+    "SHARD_LOCUST": {}
+  },
+  "selectiveBuys": {}
+}

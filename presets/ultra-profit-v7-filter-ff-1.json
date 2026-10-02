@@ -1,0 +1,19 @@
+{
+  "whitelistOnly": true,
+  "blacklist": [],
+  "whitelist": {
+    "ENCHANTED_LAVA_BUCKET": {},
+    "INFERNO_FUEL_BLOCK": {},
+    "FINE_AMBER_GEM": {},
+    "SEARED_ESCARGOT": {},
+    "FLEXBONE": {},
+    "ALLIGATOR_SKIN": {},
+    "SHARD_HELLWISP": {},
+    "MELON_JUICE": {},
+    "SHARD_CHAMELEON": {},
+    "CACTUS_FLOWER": {},
+    "ENCHANTED_GLOWSTONE": {},
+    "FINE_JASPER_GEM": {}
+  },
+  "selectiveBuys": {}
+}

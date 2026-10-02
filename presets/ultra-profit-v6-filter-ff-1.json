@@ -1,0 +1,16 @@
+{
+  "whitelistOnly": true,
+  "blacklist": [],
+  "whitelist": {
+    "FUMING_POTATO_BOOK": {},
+    "SHARD_SHELLWISE": {},
+    "COMPACTED_SUNFLOWER": {},
+    "SHARD_CRICKET": {},
+    "SHARD_MOTH": {},
+    "SHARD_HELLWISP": {},
+    "HOT_POTATO_BOOK": {},
+    "FINE_SAPPHIRE_GEM": {},
+    "FINE_AMETHYST_GEM": {}
+  },
+  "selectiveBuys": {}
+}

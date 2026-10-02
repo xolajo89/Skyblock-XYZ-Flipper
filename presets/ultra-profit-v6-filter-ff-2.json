@@ -1,0 +1,16 @@
+{
+  "whitelistOnly": true,
+  "blacklist": [],
+  "whitelist": {
+    "ENCHANTED_GOLD_BLOCK": {},
+    "BUSTED_BELT_BUCKLE": {},
+    "FLORAL_GELATIN": {},
+    "SORROW": {},
+    "ENCHANTED_INK_SACK": {},
+    "GOLDEN_TOOTH": {},
+    "SUPERIOR_FRAGMENT": {},
+    "REFINED_DIAMOND": {},
+    "ENCHANTED_COOKED_FISH": {}
+  },
+  "selectiveBuys": {}
+}

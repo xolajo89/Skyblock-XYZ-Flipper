@@ -1,0 +1,27 @@
+{
+  "blacklist": [
+    "CACTUS_FLOWER",
+    "FINE_SAPPHIRE_GEM",
+    "HEAVY_PEARL",
+    "INFERNO_FUEL_BLOCK",
+    "SALTED_SUNFLOWER_SEEDS",
+    "SHARD_GECKO",
+    "SHARD_MANTIS_SHRIMP",
+    "SHELLWISE",
+    "TREASURITE"
+  ],
+  "whitelist": {},
+  "selectiveBuys": {
+    "MANGCORE": { "maxPrice": 433000, "minProfit": 17500, "minPercentage": 6, "minBuyVolume": 560, "minSellVolume": 130, "maxBuyAmount": 13, "relistAfter": 3, "manipulationTriggerPercentage": 20 },
+    "GIANT_FRAGMENT_LASER": { "maxPrice": 1081000, "minProfit": 50000, "minPercentage": 7, "minBuyVolume": 50, "minSellVolume": 50, "maxBuyAmount": 5, "relistAfter": 3, "manipulationTriggerPercentage": 20 },
+    "ENCHANTED_GLOWSTONE": { "maxPrice": 80000, "minProfit": 4000, "minPercentage": 9, "minBuyVolume": 350, "minSellVolume": 440, "maxBuyAmount": 63, "relistAfter": 3, "manipulationTriggerPercentage": 20 },
+    "GIANT_FRAGMENT_DIAMOND": { "maxPrice": 1003000, "minProfit": 52000, "minPercentage": 9, "minBuyVolume": 50, "minSellVolume": 50, "maxBuyAmount": 5, "relistAfter": 3, "manipulationTriggerPercentage": 20 },
+    "CARROT_ZEST": { "maxPrice": 602000, "minProfit": 33500, "minPercentage": 8, "minBuyVolume": 60, "minSellVolume": 80, "maxBuyAmount": 9, "relistAfter": 3, "manipulationTriggerPercentage": 20 },
+    "SHARD_HIDEONLEAF": { "maxPrice": 62000, "minProfit": 3000, "minPercentage": 8, "minBuyVolume": 670, "minSellVolume": 720, "maxBuyAmount": 96, "relistAfter": 3, "manipulationTriggerPercentage": 20 },
+    "BLUE_RING": { "maxPrice": 186000, "minProfit": 13000, "minPercentage": 11, "minBuyVolume": 70, "minSellVolume": 100, "maxBuyAmount": 13, "relistAfter": 3, "manipulationTriggerPercentage": 20 },
+    "LIVID_FRAGMENT": { "maxPrice": 141000, "minProfit": 10500, "minPercentage": 12, "minBuyVolume": 80, "minSellVolume": 80, "maxBuyAmount": 14, "relistAfter": 3, "manipulationTriggerPercentage": 20 },
+    "GOLEM_POPPY": { "maxPrice": 335000, "minProfit": 30000, "minPercentage": 12, "minBuyVolume": 50, "minSellVolume": 60, "maxBuyAmount": 5, "relistAfter": 3, "manipulationTriggerPercentage": 20 },
+    "FTX_3070": { "maxPrice": 117000, "minProfit": 6000, "minPercentage": 8, "minBuyVolume": 50, "minSellVolume": 130, "maxBuyAmount": 7, "relistAfter": 3, "manipulationTriggerPercentage": 20 },
+    "SUPERLITE_MOTOR": { "maxPrice": 73000, "minProfit": 5500, "minPercentage": 12, "minBuyVolume": 50, "minSellVolume": 130, "maxBuyAmount": 7, "relistAfter": 3, "manipulationTriggerPercentage": 20 }
+  }
+}

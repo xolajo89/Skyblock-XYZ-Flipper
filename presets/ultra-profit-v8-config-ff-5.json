@@ -1,0 +1,8 @@
+{
+  "profit": { "min": 1500, "max": 7000000, "minPercentage": 5 },
+  "price": { "maxPricePerUnitBuy": 100000000, "maxPricePerUnitSell": 2000000000000, "minPricePerUnitBuy": 20000, "manipulationTriggerPercentage": 28, "temporaryBlacklistDuration": 10 },
+  "orders": { "maxBuyOrders": 7, "maxAmountOfSellOffers": 7, "sortBy": "coinsPerHour", "relistAfterType": "orderAmount", "relistAfter": 5, "relistWorthThreshold": 2000000 },
+  "volume": { "minBuy": 140, "minSell": 140 },
+  "purse": { "minPurse": 0, "maxSpentPerOrder": 11000000 },
+  "selectiveBuys": false
+}

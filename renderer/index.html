@@ -1,0 +1,280 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self' data:; media-src 'self'; connect-src 'self'">
+  <title>XYZ FLIPPER</title>
+  <link rel="stylesheet" href="app.css">
+  <link rel="stylesheet" href="order-cards.css">
+  <link rel="stylesheet" href="privacy.css">
+  <link rel="stylesheet" href="dynamic.css">
+  <link rel="stylesheet" href="dashboard-refresh.css">
+</head>
+<body>
+  <video class="background-video" autoplay muted loop playsinline><source src="background.mp4" type="video/mp4"></video><div class="background-tint"></div>
+  <div class="app-shell">
+    <header class="topbar">
+      <div class="brand"><img class="brand-logo" src="../assets/xyz-icon.png" alt="XYZ"><div><strong>XYZ FLIPPER</strong><span id="appVersion">Version 0.9.179</span></div></div>
+      <div class="top-actions"><span id="connectionPill" class="pill"><i></i>DISCONNECTED</span><button id="anonymousMode" class="button privacy-toggle" type="button">ANONYMOUS MODE: ON</button><button id="downloadLogFile" class="button secondary" type="button">Download All Logs</button><button id="openDataFolder" class="button ghost desktop-only" type="button">Data Folder</button><button id="killTheFih" class="button danger" type="button">KILL XYZ</button></div>
+    </header>
+    <nav class="tabs" aria-label="Application sections">
+      <button class="tab active" data-page="dashboard" type="button">Dashboard</button>
+      <button class="tab" data-page="stats" type="button">STATS</button>
+      <button class="tab" data-page="roaming" type="button">Hub Roaming</button>
+      <button class="tab hidden" data-page="actions" type="button">Bot Actions</button>
+      <button class="tab" data-page="market" type="button">Market Scanner</button>
+      <button class="tab" data-page="files" type="button">Config & Filter</button>
+      <button class="tab" data-page="credentials" type="button">Web Credentials</button>
+    </nav>
+
+    <main>
+      <section id="page-dashboard" class="page active">
+        <div class="dashboard-grid">
+          <div class="main-column">
+            <div id="stashWarning" class="stash-warning hidden" role="alert"><strong>ITEM STASH SHOULD BE CLEARED</strong><span id="stashWarningText">Run /pickupstash item when convenient. Trading continues normally.</span></div>
+            <div class="instance-account-row">
+              <article class="panel hero-panel instance-account-panel">
+                <div class="hero-copy"><p class="eyebrow">INSTANCE ACCOUNTS</p><h1><span id="accountInstanceName">XYZ-1</span> account pool</h1><p class="muted">Accounts belong only to this instance. Add as many as needed and XYZ FLIPPER will rotate them when the Bazaar limit is reached.</p><p id="accountNotice" class="account-notice hidden">Account connected.</p><div class="account-instance-row"><div id="accountManager" class="account-manager"><p class="muted small">No saved Microsoft accounts.</p></div><div class="account-instance-picker-label"><span>INSTANCE</span><button id="accountInstancePicker" class="account-instance-picker" type="button" aria-label="Switch XYZ instance" aria-haspopup="listbox" aria-expanded="false"><span id="accountInstancePickerText">XYZ-1</span><span class="picker-chevron">⌄</span></button><div id="accountInstanceMenu" class="account-instance-menu hidden" role="listbox"></div></div></div><button id="addAccount" class="button account-link-button" type="button">+ Add Microsoft Account</button></div>
+              </article>
+              <aside class="panel instance-global-actions instance-global-panel"><p class="eyebrow">INSTANCE CONTROLS</p><p id="fleetSafetyNotice" class="ban-safety-notice hidden"></p><button id="ignoreBanRate" class="button warning hidden" type="button" title="Ignore external ban-rate stops until XYZ FLIPPER is restarted. Local account ban detection stays enabled.">Ignore Ban Rate</button><p class="small">AUTO RECONNECT: <strong id="allAccountsReconnectState">OFF</strong></p><div class="instance-control-buttons"><button id="instanceControlStart" class="button primary" type="button">Start</button><button id="instanceControlStop" class="button ghost" type="button">Stop</button><button id="instanceControlReconnect" class="button secondary" type="button">Auto Reconnect: OFF</button><button id="instanceControlHubRoaming" class="button secondary" type="button" title="Persistently enable or disable Hub Roaming for the selected instance.">Hub Roaming: OFF</button></div><button id="startAllInstances" class="button primary" type="button" title="Start every instance that has a linked Microsoft account and enable Auto Reconnect">Start All Instances</button><button id="closeAllInstances" class="button danger" type="button" title="Stop every instance and disable Auto Reconnect">Stop All</button><p class="small">TOTAL PROFIT: <strong id="allInstancesProfit">0</strong></p></aside>
+            </div>
+            <article class="panel ff-account-panel">
+              <div class="ff-list-title"><div><p class="eyebrow">ACTIVE FF ACCOUNTS</p><h2>Limits by FF</h2></div><div class="ff-list-actions"><button id="resetTrackerInformation" class="button danger" type="button">Reset Information</button></div></div>
+              <div class="ff-account-head"><div class="ff-account-head-left"><div class="scanner-compact"><span class="scanner-dot"></span><div><span>SCANNER</span><strong id="scannerState">STARTING</strong><small><b id="candidateCount">0</b> candidates · <span id="scannerUpdated">waiting for market</span></small><small id="bestRate">Best: 0 coins/h</small></div></div><div class="ff-account-identity"><p class="eyebrow">ACTIVE FF ACCOUNT</p><h2 id="ffAccountLabel">FF-1</h2></div></div><span id="ffUsername" class="ff-username">Not connected</span></div>
+              <div class="ff-account-metrics">
+                <div><span>FINAL PROFIT</span><strong id="ffProfit">0</strong></div><div><span>PROFIT / HR</span><strong id="ffProfitHour">0/h</strong></div><div><span>IN-GAME PURSE</span><strong id="ffPurse">—</strong></div><div><span>BOOSTER COOKIE</span><strong id="ffCookie">Open SkyBlock Menu</strong></div><div><span>PROXY</span><strong id="ffProxy">OFF</strong><small id="ffProxyCountry">Direct connection</small></div><div><span>UPTIME</span><strong id="ffRunning">00H 00M 00S</strong></div>
+              </div>
+            </article>
+            <div class="tracker-dashboard-row">
+              <article class="panel tracker-chart-panel graph-carousel-panel">
+                <div class="panel-title"><div><p id="trackerEyebrow" class="eyebrow">CUMULATIVE PROFIT</p><h2 id="trackerChartTitle">Final Profit Curve</h2><p class="muted small graph-hint">Click the arrows, scroll, or drag across the graph to swap views.</p></div></div>
+                <div id="trackerStage" class="tracker-stage" tabindex="0">
+                  <div id="profitGraphView"><div id="trackerLegend" class="tracker-legend"></div><svg id="trackerChart" viewBox="0 0 1000 330" role="img" aria-label="XYZ FLIPPER cumulative profit graph"></svg></div>
+                  <div id="limitGraphView" class="hidden"><div id="limitTrackerLegend" class="tracker-legend"></div><svg id="limitTrackerChart" viewBox="0 0 1000 330" role="img" aria-label="XYZ FLIPPER buy, sell and total cumulative graph"></svg></div><div id="graphMetrics" class="chart-estimates"></div>
+                  <div class="graph-toolbar">
+                    <span id="graphTrend" class="graph-trend neutral">PAUSED · NO REALIZED CHANGE</span>
+                    <div class="graph-navigation graph-edge-navigation"><span id="graphCounter">GRAPH 1 OF 2</span><button id="previousGraph" type="button" aria-label="Previous graph">&larr;</button><button id="nextGraph" type="button" aria-label="Next graph">&rarr;</button></div>
+                  </div>
+                </div>
+              </article>
+              <aside class="panel tracker-side-info">
+                  <div><span>BUY LIMIT</span><strong id="sideBuyLimit">0</strong></div>
+                  <div><span>SELL LIMIT</span><strong id="sideSellLimit">0</strong></div>
+                  <div><span>TOTAL</span><strong id="sideTotalLimit">0</strong></div>
+                  <div><span>EST. TIME TO 15B / ACCOUNT</span><strong id="limitEta">—</strong></div>
+                  <div><span>LIMIT RESET IN</span><strong id="limitReset">—</strong></div>
+              </aside>
+            </div>
+            <article class="panel orders-panel">
+              <div class="panel-title"><div><p class="eyebrow">LIVE BAZAAR</p><h2>Active orders</h2><p class="muted small">Automatically synchronized, claimed and relisted by Auto Trader.</p></div><div class="order-heading-actions"><span id="locationBadge" class="badge">LOCATION UNKNOWN</span><button id="clearOrdersInventory" class="button danger" type="button" disabled>Clear Orders / Inventory</button></div></div>
+              <div class="order-columns">
+                <section><h3>Buy Orders <span id="buyOrderCount">0</span></h3><div id="buyOrderList" class="order-list"><p class="muted small">No synchronized buy orders.</p></div></section>
+                <section><h3>Sell Offers <span id="sellOrderCount">0</span></h3><div id="sellOrderList" class="order-list"><p class="muted small">No synchronized sell offers.</p></div></section>
+              </div>
+            </article>
+            <article class="panel activity-panel">
+              <div class="panel-title"><div><p class="eyebrow">RECENT ACTIVITY</p><h2>Connection and scanner events</h2></div><span class="badge warning">CONTAINER-VALIDATED CLICKS</span></div>
+              <div id="activityFeed" class="activity-feed"><p class="muted">No events yet.</p></div>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section id="page-stats" class="page">
+        <article class="panel stats-overview-panel">
+          <div class="panel-title"><div><p class="eyebrow">ALL INSTANCES</p><h1>Live performance</h1><p class="muted">Instances and metrics are arranged vertically. Scroll, swipe, or use the arrows.</p></div><div class="stats-head-actions"><span id="statsInstanceCount" class="badge">0 INSTANCES</span><button id="statsPrevious" class="stats-scroll-button" type="button" aria-label="Previous instance">&uarr;</button><button id="statsNext" class="stats-scroll-button" type="button" aria-label="Next instance">&darr;</button></div></div>
+          <div id="statsGrid" class="stats-grid"><p class="muted">No FF instances configured.</p></div>
+        </article>
+      </section>
+
+      <section id="page-roaming" class="page" aria-labelledby="hubRoamingHeading" aria-busy="false">
+        <div class="hub-roaming-layout">
+          <article class="panel hub-roaming-controls">
+            <div class="panel-title"><div><p class="eyebrow">HUB MOVEMENT</p><h1 id="hubRoamingHeading">Hub Roaming</h1><p class="muted">Each instance has its own independent Roaming engine, route, activity schedule, and controls.</p></div><span id="hubRoamingStatus" class="badge" aria-live="polite" aria-atomic="true">OFFLINE</span></div>
+            <label class="hub-instance-picker-label" for="hubInstancePicker"><span>INSTANCE</span><select id="hubInstancePicker" aria-label="Hub roaming instance" aria-describedby="hubRoamingNotice"><option value="">No instances configured</option></select></label>
+            <label class="hub-instance-picker-label" for="hubActivityMode"><span>ACTIVITY MODE</span><select id="hubActivityMode" aria-label="Hub roaming activity mode" aria-describedby="hubActivityDescription"><option value="ultra-low">Ultra Low Activity</option><option value="low">Low Activity</option><option value="medium" selected>Medium Activity</option><option value="high">High Activity</option><option value="no-bazaar">No Bazaar</option></select></label>
+            <p id="hubActivityDescription" class="hub-activity-description muted">Balanced walking periods, natural idle breaks, and occasional background Bazaar checks.</p>
+            <p id="hubActivityConfirmation" class="hub-activity-confirmation" role="status" aria-live="polite">APPLIED TO THIS INSTANCE: MEDIUM ACTIVITY</p>
+            <label class="hub-instance-picker-label" for="hubHumanizerVersion"><span>HUMANIZER</span><select id="hubHumanizerVersion" aria-label="Hub humanizer version" aria-describedby="hubHumanizerDescription"><option value="1">V1 — Classic</option><option value="2" selected>V2 — Adaptive</option></select></label>
+            <p id="hubHumanizerDescription" class="hub-activity-description muted">Adaptive curved movement, eased camera acquisition, and effect-aware jumping.</p>
+            <div class="hub-roaming-actions" role="group" aria-label="Hub Roaming controls">
+              <button id="hubTeleport" class="button secondary" type="button" aria-describedby="hubRoamingNotice">Teleport /hub</button>
+              <button id="hubStart" class="button primary" type="button" aria-describedby="hubRoamingNotice">Start Roaming</button>
+              <button id="hubPauseResume" class="button secondary" type="button" aria-describedby="hubRoamingNotice" disabled>Pause</button>
+              <button id="hubStop" class="button danger" type="button" aria-describedby="hubRoamingNotice" disabled>Stop</button>
+            </div>
+            <p id="hubRoamingNotice" class="hub-roaming-notice muted" role="status" aria-live="polite" aria-atomic="true">Only the instance selected here can run Hub Roaming. Bazaar controls keep their own selected instance.</p>
+            <button id="hubExportDiagnostics" class="button ghost hub-export-button" type="button" aria-describedby="hubRoamingNotice">Export Hub Diagnostics</button>
+          </article>
+
+          <article class="panel hub-roaming-monitor">
+            <div class="panel-title"><div><p class="eyebrow">LIVE PATHFINDER</p><h2 id="hubInstanceName">No instance selected</h2></div><span id="hubConnectionStatus" class="badge">DISCONNECTED</span></div>
+            <div class="hub-roaming-metrics">
+              <div><span>STATE</span><strong id="hubPathState">STOPPED</strong></div>
+              <div><span>LOCATION</span><strong id="hubLocation">Unknown</strong></div>
+              <div><span>COORDINATES</span><strong id="hubCoordinates">—</strong></div>
+              <div><span>CURRENT GOAL</span><strong id="hubGoal">—</strong></div>
+              <div><span>ROUTE</span><strong id="hubRouteProgress">0 / 0</strong></div>
+              <div><span>ACTIVITY MODE</span><strong id="hubAppliedActivityMode">MEDIUM ACTIVITY</strong></div>
+              <div><span>LAST UPDATE</span><strong id="hubLastUpdate">—</strong></div>
+              <div class="hub-god-potion-card"><span>GOD POTION</span><strong id="hubGodPotion">NOT DETECTED</strong><small id="hubMovementEffects">Speed 0 · Jump 0</small></div>
+            </div>
+            <div id="hubProgressTrack" class="hub-progress-track" role="progressbar" aria-label="Hub route progress" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0" aria-valuetext="No active route"><span id="hubProgressBar"></span></div>
+            <p id="hubRoamingError" class="hub-roaming-error hidden" role="alert"></p>
+          </article>
+        </div>
+      </section>
+
+      <section id="page-actions" class="page">
+        <div class="auto-actions-layout">
+          <article class="panel auto-overview">
+            <div class="panel-title"><div><p class="eyebrow">FULLY AUTOMATIC EXECUTION</p><h1>Bot Actions</h1><p class="muted">Scanner → buy order → claim items → sell offer → claim coins. Displaced orders are cancelled and placed again.</p></div><span id="actionsAutoBadge" class="badge ok">AUTO ENABLED</span></div>
+            <div class="auto-metrics">
+              <div><span>STATUS</span><strong id="actionsStatus">WAITING</strong></div>
+              <div><span>PHASE</span><strong id="actionsPhase">idle</strong></div>
+              <div><span>TARGET</span><strong id="actionsTarget">None</strong></div>
+              <div><span>LAST ACTION</span><strong id="actionsLastAt">—</strong></div>
+            </div>
+            <div class="auto-counts">
+              <div><span>BUY ORDERS</span><strong id="countBuyOrders">0</strong></div>
+              <div><span>SELL OFFERS</span><strong id="countSellOffers">0</strong></div>
+              <div><span>CLAIMED ITEMS</span><strong id="countClaimedItems">0</strong></div>
+              <div><span>CLAIMED COINS</span><strong id="countClaimedCoins">0</strong></div>
+              <div><span>RELISTS</span><strong id="countRelists">0</strong></div>
+              <div><span>RECOVERIES</span><strong id="countRecoveries">0</strong></div>
+            </div>
+          </article>
+          <article class="panel auto-feed-panel"><div class="panel-title"><div><p class="eyebrow">AUTOMATION JOURNAL</p><h2>Executed actions</h2></div><span class="badge">LIVE</span></div><div id="automationFeed" class="automation-feed"><p class="muted">No automatic actions yet.</p></div></article>
+        </div>
+      </section>
+
+      <section id="page-market" class="page">
+        <article class="panel market-panel">
+          <div class="panel-title"><div><p class="eyebrow">FILTERED BAZAAR OPPORTUNITIES</p><h1>Market candidates</h1></div><div class="market-actions"><span id="marketTimestamp" class="muted">Not scanned</span><button id="marketExportLog" class="button secondary" type="button">Export Scanner Log</button><button id="marketScanNow" class="button primary" type="button">Refresh</button></div></div>
+          <div class="table-wrap"><table><thead><tr><th>#</th><th>Item</th><th>Source</th><th>Buy offer</th><th>Sell offer</th><th>Tax/unit</th><th>Net profit/unit</th><th>ROI</th><th>Qty</th><th>Est. cycle</th><th>Top-5 depth B/S</th><th>Buy pressure</th><th>Coins/hour</th></tr></thead><tbody id="marketRows"><tr><td colspan="13" class="empty-cell">Run the scanner to load Bazaar candidates.</td></tr></tbody></table></div>
+        </article>
+        <article class="panel item-catalog-panel">
+          <div class="panel-title"><div><p class="eyebrow">OFFICIAL HYPIXEL ITEMS + BAZAAR APIs</p><h1>Bazaar-tradable items</h1><p id="itemCatalogSummary" class="muted">Loading Bazaar item catalog...</p></div><input id="itemSearch" class="catalog-search" placeholder="Search name or item ID"></div>
+          <div class="table-wrap"><table><thead><tr><th>#</th><th>Item name</th><th>Item ID (for filter)</th><th>Category</th><th>Tier</th><th>NPC sell</th></tr></thead><tbody id="itemRows"><tr><td colspan="6" class="empty-cell">Loading tradable items from the Bazaar API...</td></tr></tbody></table></div>
+          <div class="catalog-pagination"><button id="itemsPrevious" class="button ghost" type="button">Previous</button><span id="itemsPage" class="muted">Page 1</span><button id="itemsNext" class="button ghost" type="button">Next</button></div>
+        </article>
+      </section>
+
+      <section id="page-credentials" class="page">
+        <article class="panel credentials-panel">
+          <div class="credentials-heading"><p class="eyebrow">WEB DASHBOARD ACCESS</p><h1>Web Credentials</h1><p class="muted">Change the credentials used only to enter the web dashboard. They are saved locally in webpage-credentials.txt.</p></div>
+          <div class="credentials-grid">
+            <label class="credential-card"><span>WEBPAGE USERNAME</span><input id="webUsername" type="text" maxlength="64" autocomplete="username"><button id="copyWebUsername" class="button secondary" type="button">Copy username</button></label>
+            <label class="credential-card"><span>WEBPAGE PASSWORD</span><input id="webPassword" type="text" maxlength="128" autocomplete="new-password"><button id="copyWebPassword" class="button secondary" type="button">Copy password</button></label>
+          </div>
+          <button id="saveWebCredentials" class="button primary credentials-save" type="button">Save credentials</button>
+          <p id="webCredentialsStatus" class="credentials-status" role="status"></p>
+        </article>
+      </section>
+
+      <section id="page-files" class="page">
+        <section class="instance-workspace">
+          <aside class="instance-sidebar"><div class="panel-title"><div><p class="eyebrow">LOCAL INSTANCES</p><h2>FF processes</h2></div><button id="instanceAdd" class="button primary" type="button">+ Add</button></div><div class="instance-picker-label"><span>CURRENT INSTANCE</span><button id="instancePicker" class="instance-picker" type="button" aria-label="Current FF instance" aria-haspopup="listbox" aria-expanded="false"><span id="instancePickerText">FF-1</span><span class="picker-chevron">⌄</span></button><div id="instancePickerMenu" class="instance-picker-menu hidden" role="listbox"></div></div><div id="instanceList" class="instance-list"></div><p class="small muted">Each instance has its own config, filter, account pool and Bazaar log.</p></aside>
+          <article class="instance-editor"><div class="panel-title"><div><p class="eyebrow">CONFIGURATION</p><h2 id="instanceTitle">FF-1 · config.json</h2></div><span id="instanceStatus" class="badge ok">LOADED</span></div><div class="instance-tabs"><button class="inactive selected" data-instance-file="config" type="button"><span>config.json</span><b data-instance-file-state="config">STOPPED</b></button><button class="inactive" data-instance-file="filter" type="button"><span>filter.json</span><b data-instance-file-state="filter">STOPPED</b></button></div><div class="editor-heading-actions"><span id="instanceAutoSave" class="small muted">Autosave enabled</span><button id="instanceReveal" class="button ghost" type="button">Reveal editor</button></div><textarea id="instanceEditor" class="editor sensitive-hidden" spellcheck="false"></textarea><div class="editor-actions"><button id="instanceSave" class="button primary" type="button">Save now</button><button id="instanceReset" class="button danger" type="button">Reset to Base</button></div><article class="instance-log"><div class="panel-title"><div><p class="eyebrow">RECENT ACTIVITY</p><h2>Bazaar activity</h2></div></div><pre id="instanceLog">No Bazaar activity for this instance.</pre></article></article>
+        </section>
+        <article class="panel dynamic-panel">
+          <div class="panel-title"><div><p class="eyebrow">MARKET-AWARE SETTINGS</p><h1>Dynamic config & filter</h1></div><span id="dynamicState" class="badge">NOT GENERATED</span></div>
+          <div class="dynamic-controls">
+            <label>Purse, coins<input id="dynamicPurse" type="number" min="1000000" max="600000000" step="1000000" value="150000000"></label>
+            <label>History window<select id="dynamicLookback"><option value="1">Last hour</option><option value="6">Last 6 hours</option><option value="12">Last 12 hours</option><option value="24" selected>Last 24 hours</option><option value="72">Last 3 days</option><option value="168">Last 7 days</option></select></label>
+            <button id="generateDynamic" class="button primary" type="button">Generate preview</button>
+            <button id="applyDynamic" class="button secondary" type="button" disabled>Apply to config & filter</button>
+            <button id="applySimplePreset" class="button ghost" type="button">Use Simple Preset</button>
+            <button id="applyUltraProfitPreset" class="button primary" type="button">Apply Ultra Profit V2 Portfolio</button>
+            <button id="applyUltraProfitV3Preset" class="button primary" type="button">Apply Ultra Profit V3 Portfolio</button>
+            <button id="applyUltraProfitV4Preset" class="button primary" type="button">Apply Ultra Profit V4 Fast Turnover</button>
+            <button id="applyUltraProfitV5Preset" class="button primary" type="button">Apply Ultra Profit V5 High Ticket</button>
+            <button id="applyUltraProfitV6Preset" class="button primary" type="button">Apply Ultra Profit V6 · 5 Instances</button>
+            <button id="applyUltraProfitV7Preset" class="button primary" type="button">Apply Ultra Profit V7 · 40h Audit</button>
+            <button id="applyUltraProfitV8Preset" class="button primary" type="button">Apply Ultra Profit V8 · 5 Accounts</button>
+          </div>
+          <p id="dynamicSummary" class="muted">Uses collected price stability, liquidity, net profit and Daily Bazaar Limit efficiency.</p>
+          <div id="dynamicTop" class="dynamic-top"></div>
+        </article>
+        <article class="panel saved-profiles-panel">
+          <div class="panel-title"><div><p class="eyebrow">SAVED PROFILES</p><h2>Config + filter library</h2></div><span id="savedProfileCount" class="badge">0 SAVED</span></div>
+          <p class="muted small">Save the selected instance’s current config.json and filter.json together. Applying a profile replaces filter.json and changes only profit, price, orders, volume, purse and selectiveBuys. Proxy, accounts, webpage access, server, recovery and every other setting stay untouched.</p>
+          <div class="saved-profile-controls"><input id="savedProfileName" maxlength="64" placeholder="Profile name, e.g. stable-liquid"><button id="saveCurrentProfile" class="button secondary" type="button">Save Current Pair</button></div>
+          <div class="saved-profile-controls"><select id="savedProfileList" aria-label="Saved config and filter profile"></select><button id="applySavedProfile" class="button primary" type="button">Apply to This Instance</button><button id="applySavedProfileAll" class="button ghost" type="button">Apply Trading Rules to All</button><button id="deleteSavedProfile" class="button danger" type="button">Delete</button></div>
+          <p id="savedProfileStatus" class="small muted">No saved profiles yet.</p>
+        </article>
+        <article class="panel proxy-pool-panel">
+          <div class="panel-title"><div><p class="eyebrow">WEBSHARE · SOCKS5</p><h2>Proxy Pool</h2><p class="muted small">Import a downloaded Webshare list, then choose a separate country and proxy for every instance. Passwords are stored locally and are never shown again after import.</p></div><div class="proxy-pool-head-actions"><span id="proxyPoolCount" class="badge">0 PROXIES</span><button id="proxyPoolAutoAssign" class="button secondary" type="button">Auto-Assign Unique</button><button id="proxyPoolClear" class="button danger" type="button">Clear List</button></div></div>
+          <div class="proxy-pool-import">
+            <label>Proxy list<input id="proxyPoolFile" type="file" accept=".txt,.csv,.json,text/plain,text/csv,application/json"></label>
+            <label>Country for this file (optional)<input id="proxyPoolCountry" maxlength="64" placeholder="e.g. Poland or PL"></label>
+            <button id="proxyPoolImport" class="button primary" type="button">Import Webshare List</button>
+          </div>
+          <p class="small muted">Supported: <code>IP:PORT:USERNAME:PASSWORD</code>, CSV/TSV with headers, JSON, and <code>socks5://user:password@IP:PORT</code>. If TXT has no country column, enter the country once before importing.</p>
+          <div id="proxyPoolCountries" class="proxy-country-summary"></div>
+          <div id="proxyPoolInstances" class="proxy-pool-instances"><p class="muted">No proxies imported yet.</p></div>
+          <p id="proxyPoolStatus" class="small muted" role="status">Select a Webshare file to begin.</p>
+        </article>
+        <article class="panel config-guide">
+          <div class="panel-title"><div><p class="eyebrow">HUMAN-READABLE GUIDE</p><h2>Important config fields</h2></div><span class="badge ok">ITEM ID IN FILTER</span></div>
+          <div class="guide-grid">
+            <div><strong>maxBuyOrders</strong><span>Maximum simultaneous buy orders.</span></div>
+            <div><strong>maxAmountOfSellOffers</strong><span>Maximum active sell offers. Existing offers are preserved if this is lowered.</span></div>
+            <div><strong>maxSpentPerOrder</strong><span>Maximum coins spent on one buy order.</span></div>
+            <div><strong>Item name</strong><span>Used only for commands, for example <code>/bz Oak Log</code>.</span></div>
+            <div><strong>ITEM_ID</strong><span>Used in filter.json, for example <code>LOG_2</code>.</span></div>
+            <div><strong>bazaarSearchTyping</strong><span>Length-based delay before <code>/bz Item Name</code>: short names 2–3s, medium names 3–6s.</span></div>
+          </div>
+        </article>
+        <article class="panel proxy-panel">
+          <div class="panel-title"><div><p class="eyebrow">CONNECTION SETTINGS</p><h2>Proxy config</h2><p class="muted small">Stored inside config.json. Password is saved as plain JSON text.</p></div><button id="saveProxy" class="button primary" type="button">Apply to Config</button></div>
+          <div class="proxy-grid"><label class="proxy-toggle">Enabled<select id="proxyEnabled"><option value="false">Disabled</option><option value="true">Enabled</option></select></label><label>Type<select id="proxyType"><option value="socks5">SOCKS5</option><option value="http">HTTP</option></select></label><label>Host<input id="proxyHost" placeholder="127.0.0.1"></label><label>Port<input id="proxyPort" type="number" min="1" max="65535" value="1080"></label><label>Country<input id="proxyCountry" placeholder="Estonia"></label><label>Username<input id="proxyUsername" autocomplete="off"></label><label>Password<input id="proxyPassword" type="password" autocomplete="new-password"></label></div>
+        </article>
+        <article class="panel filter-example-panel">
+          <div class="panel-title"><div><p class="eyebrow">FILTER EXAMPLE</p><h2>How to create filter.json</h2><p class="muted small">Use Bazaar ITEM_ID values, never display names. Empty objects mean the global config rules are used.</p></div><div class="editor-heading-actions"><button id="loadFilterExample" class="button secondary" type="button">Load Example into Editor</button><button id="replaceConfigFilter" class="button danger" type="button">Replace Config + Filter</button></div></div>
+          <pre id="filterExample">{
+  "blacklist": ["ESSENCE_GOLD", "ESSENCE_DRAGON"],
+  "whitelist": {
+    "BOOSTER_COOKIE": {}
+  },
+  "selectiveBuys": {
+    "ENCHANTED_CARROT": {},
+    "LOG_2": {}
+  }
+}</pre>
+        </article>
+        <div class="editor-grid">
+          <article class="panel editor-panel">
+            <div class="panel-title"><div><p class="eyebrow">STRATEGY · SELECTED ACCOUNT</p><h2>config.json</h2></div><div class="editor-heading-actions"><span id="configState" class="badge">PRIVATE</span><button class="button ghost reveal-editor" data-reveal="config" type="button">Reveal editor</button></div></div>
+            <textarea id="configEditor" class="editor" spellcheck="false" aria-label="Config JSON"></textarea>
+            <div class="editor-actions"><button class="button primary" data-save="config" type="button">Save Config</button><button class="button secondary" data-import="config" type="button">Import</button><button class="button danger" data-restore="config" type="button">Restore Previous</button></div>
+          </article>
+          <article class="panel editor-panel">
+            <div class="panel-title"><div><p class="eyebrow">ITEM RULES · SELECTED ACCOUNT</p><h2>filter.json</h2></div><div class="editor-heading-actions"><span id="filterState" class="badge">PRIVATE</span><button class="button ghost reveal-editor" data-reveal="filter" type="button">Reveal editor</button></div></div>
+            <textarea id="filterEditor" class="editor" spellcheck="false" aria-label="Filter JSON"></textarea>
+            <div class="editor-actions"><button class="button primary" data-save="filter" type="button">Save Filter</button><button class="button secondary" data-import="filter" type="button">Import</button><button class="button danger" data-restore="filter" type="button">Restore Previous</button></div>
+          </article>
+        </div>
+        <div id="fileMessage" class="notice hidden"></div>
+      </section>
+
+    </main>
+  </div>
+
+  <dialog id="deviceDialog">
+    <div class="dialog-content"><p class="eyebrow">MICROSOFT DEVICE LOGIN</p><h2>Authorize this instance account</h2><p id="deviceMessage" class="muted">Open Microsoft and enter this one-time code.</p><button id="openMicrosoft" class="microsoft-login-link" type="button">https://login.live.com/oauth20_remoteconnect.srf?otc=--------</button><button id="deviceCode" class="device-code" type="button">--------</button><p class="small muted">Open the direct Microsoft link above. Click the code to copy it.</p><div class="dialog-actions"><button id="closeDeviceDialog" class="button ghost" type="button">Close</button></div></div>
+  </dialog>
+  <dialog id="ffDialog" class="ff-dialog">
+    <form id="ffDialogForm" class="dialog-content" method="dialog">
+      <p id="ffDialogEyebrow" class="eyebrow">XYZ FLIPPER</p>
+      <h2 id="ffDialogTitle">Confirm action</h2>
+      <p id="ffDialogMessage" class="muted"></p>
+      <input id="ffDialogInput" class="ff-dialog-input hidden" autocomplete="off">
+      <div class="dialog-actions"><button id="ffDialogConfirm" class="button primary" type="submit">Confirm</button><button id="ffDialogCancel" class="button ghost" type="button">Cancel</button></div>
+    </form>
+  </dialog>
+  <script src="browser-bridge.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>

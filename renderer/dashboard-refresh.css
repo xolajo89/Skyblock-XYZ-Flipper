@@ -1,0 +1,279 @@
+/* Dashboard refresh: keep information readable on ultrawide desktops and
+   intentionally reflow it for touch-sized phone screens. */
+body {
+  background:
+    radial-gradient(circle at 18% -12%, rgba(33,150,243,.18), transparent 34%),
+    radial-gradient(circle at 92% 6%, rgba(54,220,145,.08), transparent 25%),
+    var(--bg);
+}
+
+.app-shell {
+  width: min(1540px, calc(100% - 28px));
+  margin: 14px auto;
+}
+
+.page { padding: 18px 22px 24px; }
+.main-column { gap: 16px; }
+.panel {
+  border-color: #2b394d;
+  box-shadow: inset 0 1px rgba(255,255,255,.018);
+}
+
+.instance-account-row { grid-template-columns: minmax(0,1fr) 238px; gap: 16px; }
+.instance-account-panel { min-height: 184px !important; }
+.instance-account-panel .muted { max-width: 780px; line-height: 1.55; }
+.instance-global-panel { background: linear-gradient(180deg,#101824,#0d141d); }
+
+.ff-account-panel { padding: 24px 26px; }
+.ff-account-head { padding-bottom: 17px; }
+.ff-account-metrics { margin-top: 20px; }
+.ff-account-metrics > div { padding: 3px 22px; }
+.ff-account-metrics strong { font-size: 23px; }
+
+.tracker-dashboard-row { grid-template-columns: minmax(0,1fr) 252px; gap: 16px; }
+.tracker-chart-panel { min-height: 470px; padding: 22px 24px; }
+.tracker-stage { padding-top: 54px; }
+.tracker-chart-panel svg { height: 320px; }
+.graph-toolbar {
+  position: absolute;
+  z-index: 4;
+  top: 0;
+  right: 0;
+  display: flex;
+  align-items: center;
+  gap: 9px;
+}
+.graph-edge-navigation { position: static; }
+.graph-trend {
+  display: inline-flex;
+  align-items: center;
+  min-height: 42px;
+  padding: 0 13px;
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  background: #0d151f;
+  color: var(--muted);
+  font-size: 10px;
+  font-weight: 900;
+  letter-spacing: .055em;
+  white-space: nowrap;
+}
+.graph-trend.positive {
+  border-color: rgba(54,220,145,.28);
+  background: rgba(54,220,145,.09);
+  color: var(--green);
+}
+.graph-trend.negative {
+  border-color: rgba(255,105,130,.28);
+  background: rgba(255,105,130,.09);
+  color: var(--red);
+}
+.chart-profit-area { opacity: .055; }
+.tracker-side-info { gap: 11px; padding: 0; }
+.tracker-side-info > div {
+  min-height: 78px;
+  background: linear-gradient(180deg,#101721,#0d141c);
+}
+
+.order-columns {
+  align-items: start;
+  gap: 16px;
+}
+.order-columns > section {
+  min-width: 0;
+  min-height: 220px;
+  max-height: 720px;
+  overflow-x: hidden;
+  overflow-y: auto;
+  border-radius: 16px;
+  scrollbar-gutter: stable;
+  scrollbar-width: thin;
+  scrollbar-color: #4d687f #101820;
+}
+.order-columns > section::-webkit-scrollbar { width: 14px; }
+.order-columns > section::-webkit-scrollbar-track {
+  margin: 10px 4px 10px 0;
+  border: 3px solid #0d131b;
+  border-radius: 999px;
+  background: #18222d;
+}
+.order-columns > section::-webkit-scrollbar-thumb {
+  min-height: 44px;
+  border: 3px solid #0d131b;
+  border-radius: 999px;
+  background: linear-gradient(180deg,#7895ad,#4d667c);
+  box-shadow: inset 0 1px rgba(255,255,255,.2);
+}
+.order-columns > section::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(180deg,#8cb2cf,#5c7b94);
+}
+.order-card {
+  min-height: 130px;
+  grid-template-columns: 132px minmax(0,1fr);
+  padding: 13px 14px;
+  background: linear-gradient(110deg,#192330,#17202b);
+}
+.order-worth { font-size: 16px; }
+.order-item { padding-right: 78px; font-size: 14px !important; }
+.order-card-actions { align-self: end; }
+
+@media (max-width: 1180px) {
+  .app-shell { width: calc(100% - 18px); margin: 9px auto; }
+  .tracker-dashboard-row { grid-template-columns: 1fr; }
+  .tracker-side-info { grid-template-columns: repeat(5,1fr); grid-template-rows: auto; }
+  .tracker-side-info > div { min-height: 86px; }
+}
+
+@media (max-width: 760px) {
+  body,
+  html.phone-web body {
+    min-width: 0;
+    font-size: 13px;
+    overflow-x: hidden;
+  }
+  .app-shell,
+  .phone-web .app-shell {
+    width: 100%;
+    min-height: 100vh;
+    margin: 0;
+    border: 0;
+    border-radius: 0;
+  }
+  .topbar,
+  .phone-web .topbar {
+    height: auto;
+    min-height: 68px;
+    padding: 11px 12px;
+    align-items: flex-start;
+    gap: 9px;
+    flex-wrap: wrap;
+  }
+  .brand span { display: block; margin-top: 2px; font-size: 10px; }
+  .brand .logo { width: 39px; height: 39px; }
+  .top-actions,
+  .phone-web .top-actions {
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 7px;
+  }
+  .top-actions .pill { grid-column: 1/-1; justify-content: center; }
+  .top-actions .button { min-width: 0; min-height: 42px; padding: 8px 6px; font-size: 9px; }
+  #killTheFih { grid-column: 1/-1; }
+  .tabs,
+  .phone-web .tabs {
+    display: flex;
+    gap: 6px;
+    padding: 8px 10px;
+    overflow-x: auto;
+    scrollbar-width: none;
+    scroll-snap-type: x mandatory;
+  }
+  .tabs::-webkit-scrollbar { display: none; }
+  .tab,
+  .phone-web .tab { flex: 0 0 124px; height: 42px; scroll-snap-align: start; }
+  .page,
+  .phone-web .page { padding: 9px; }
+  .panel,
+  .phone-web .panel { padding: 14px; border-radius: 14px; }
+  .main-column { gap: 10px; }
+  .instance-account-row,
+  .tracker-dashboard-row,
+  .dashboard-grid,
+  .editor-grid,
+  .auto-actions-layout { grid-template-columns: minmax(0,1fr); }
+  .instance-account-panel { min-height: 0 !important; }
+  .instance-account-panel h1 { font-size: 19px; }
+  .instance-account-panel .muted { font-size: 11px; }
+  .account-instance-row { flex-direction: column; align-items: stretch; }
+  .account-instance-picker-label { width: 100%; flex-basis: auto; }
+  .account-manager { gap: 6px; }
+  .account-chip { max-width: 100%; }
+  .instance-global-panel { grid-template-columns: 1fr; }
+  .instance-global-panel .button { min-height: 44px; }
+  .ff-list-title,
+  .ff-account-head,
+  .panel-title { align-items: flex-start; flex-direction: column; }
+  .ff-list-title { margin-bottom: 12px; }
+  .ff-list-actions,
+  .ff-list-actions .button { width: 100%; }
+  .ff-account-head-left { display: grid; width: 100%; grid-template-columns: 1fr; gap: 10px; }
+  .ff-account-identity { padding: 10px 0 0; border-top: 1px solid var(--border); border-left: 0; }
+  .ff-username { align-self: flex-start; }
+  .ff-account-metrics,
+  .phone-web .ff-account-metrics {
+    grid-template-columns: 1fr 1fr;
+    gap: 0;
+    margin-top: 12px;
+  }
+  .ff-account-metrics > div,
+  .phone-web .ff-account-metrics > div {
+    min-height: 78px;
+    padding: 12px 8px;
+    border-left: 0;
+    border-bottom: 1px solid var(--border);
+  }
+  .ff-account-metrics > div:nth-child(even) { border-left: 1px solid var(--border); }
+  .ff-account-metrics > div:last-child { grid-column: 1/-1; border-left: 0; }
+  .ff-account-metrics strong { font-size: clamp(16px,5vw,20px); white-space: normal; }
+  .tracker-chart-panel,
+  .phone-web .tracker-chart-panel { min-height: 390px; padding: 14px; }
+  .tracker-stage,
+  .phone-web .tracker-stage { padding-top: 88px; overflow: hidden; }
+  .tracker-stage svg,
+  .phone-web .tracker-stage svg {
+    width: 100%;
+    min-width: 0;
+    height: 245px;
+    overflow: hidden;
+  }
+  .graph-toolbar {
+    left: 0;
+    right: 0;
+    justify-content: space-between;
+    align-items: stretch;
+  }
+  .graph-trend {
+    min-width: 0;
+    min-height: 40px;
+    padding: 0 9px;
+    font-size: 8px;
+    white-space: normal;
+  }
+  .graph-navigation { flex: 0 0 auto; }
+  .graph-navigation span { display: none; }
+  .tracker-legend { margin-top: 6px; font-size: 10px; }
+  .tracker-side-info,
+  .phone-web .tracker-side-info {
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto;
+    gap: 8px;
+    padding: 0;
+  }
+  .tracker-side-info > div { min-height: 82px; }
+  .tracker-side-info > div:last-child { grid-column: 1/-1; }
+  .order-heading-actions { width: 100%; justify-content: flex-start; }
+  .order-heading-actions .button { flex: 1; min-height: 42px; }
+  .order-columns,
+  .phone-web .order-columns { grid-template-columns: 1fr; gap: 10px; }
+  .order-columns > section {
+    min-height: 160px;
+    max-height: none;
+    padding: 9px;
+    overflow: visible;
+  }
+  .order-card {
+    grid-template-columns: 104px minmax(0,1fr);
+    min-height: 148px;
+    gap: 3px 10px;
+    padding: 11px;
+  }
+  .order-worth-box { padding-right: 9px; }
+  .order-worth { font-size: 14px; }
+  .order-item { padding-right: 0; font-size: 13px !important; white-space: normal; }
+  .order-detail { white-space: normal !important; line-height: 1.35; }
+  .order-owner { position: static; grid-column: 2; max-width: 100%; }
+  .order-card-actions { grid-column: 2; }
+  .activity-row { grid-template-columns: 64px 50px minmax(0,1fr); gap: 6px; font-size: 10px; }
+  .activity-row span { overflow-wrap: anywhere; }
+}

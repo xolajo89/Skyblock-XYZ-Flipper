@@ -1,0 +1,15 @@
+{
+  "whitelistOnly": true,
+  "blacklist": [],
+  "whitelist": {
+    "ENCHANTED_FERMENTED_SPIDER_EYE": {},
+    "GOBLIN_EGG_RED": {},
+    "JUNGLE_KEY": {},
+    "SOULFLOW": {},
+    "FIGSTONE": {},
+    "STRONG_FRAGMENT": {},
+    "SORROW": {},
+    "FUMING_POTATO_BOOK": {}
+  },
+  "selectiveBuys": {}
+}

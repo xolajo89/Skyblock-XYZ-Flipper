@@ -1,0 +1,15 @@
+{
+  "whitelistOnly": true,
+  "blacklist": [],
+  "whitelist": {
+    "THUNDER_SHARDS": {},
+    "MANGCORE": {},
+    "SHARD_KRAKEN": {},
+    "FINE_AMETHYST_GEM": {},
+    "SHARD_SHELLWISE": {},
+    "SHARD_SEPIALOT": {},
+    "PLASMA": {},
+    "FINE_CITRINE_GEM": {}
+  },
+  "selectiveBuys": {}
+}

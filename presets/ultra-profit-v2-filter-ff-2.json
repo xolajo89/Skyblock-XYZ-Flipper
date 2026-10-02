@@ -1,0 +1,28 @@
+{
+  "blacklist": [
+    "CACTUS_FLOWER",
+    "FINE_SAPPHIRE_GEM",
+    "HEAVY_PEARL",
+    "INFERNO_FUEL_BLOCK",
+    "SALTED_SUNFLOWER_SEEDS",
+    "SHARD_GECKO",
+    "SHARD_MANTIS_SHRIMP",
+    "SHELLWISE",
+    "TREASURITE"
+  ],
+  "whitelist": {},
+  "selectiveBuys": {
+    "SHARD_POWER_DRAGON": { "maxPrice": 567000, "minProfit": 35500, "minPercentage": 12, "minBuyVolume": 210, "minSellVolume": 110, "maxBuyAmount": 12, "relistAfter": 3, "manipulationTriggerPercentage": 20 },
+    "SHARD_FLY": { "maxPrice": 157000, "minProfit": 6000, "minPercentage": 6, "minBuyVolume": 1170, "minSellVolume": 410, "maxBuyAmount": 44, "relistAfter": 3, "manipulationTriggerPercentage": 20 },
+    "BLUE_ICE_HUNK": { "maxPrice": 502000, "minProfit": 13500, "minPercentage": 4, "minBuyVolume": 80, "minSellVolume": 90, "maxBuyAmount": 13, "relistAfter": 3, "manipulationTriggerPercentage": 20 },
+    "REFINED_MINERAL": { "maxPrice": 243000, "minProfit": 6000, "minPercentage": 4, "minBuyVolume": 270, "minSellVolume": 110, "maxBuyAmount": 20, "relistAfter": 3, "manipulationTriggerPercentage": 20 },
+    "SHARD_HIDEONFLOOR": { "maxPrice": 196000, "minProfit": 4500, "minPercentage": 4, "minBuyVolume": 330, "minSellVolume": 240, "maxBuyAmount": 35, "relistAfter": 3, "manipulationTriggerPercentage": 20 },
+    "SHARD_SHINYFISH": { "maxPrice": 138000, "minProfit": 4500, "minPercentage": 6, "minBuyVolume": 420, "minSellVolume": 130, "maxBuyAmount": 24, "relistAfter": 3, "manipulationTriggerPercentage": 20 },
+    "GOLDEN_TOOTH": { "maxPrice": 132000, "minProfit": 8000, "minPercentage": 10, "minBuyVolume": 540, "minSellVolume": 80, "maxBuyAmount": 15, "relistAfter": 3, "manipulationTriggerPercentage": 20 },
+    "ECTOPLASM": { "maxPrice": 238000, "minProfit": 8000, "minPercentage": 5, "minBuyVolume": 60, "minSellVolume": 80, "maxBuyAmount": 11, "relistAfter": 3, "manipulationTriggerPercentage": 20 },
+    "CONTROL_SWITCH": { "maxPrice": 273000, "minProfit": 12500, "minPercentage": 8, "minBuyVolume": 50, "minSellVolume": 130, "maxBuyAmount": 7, "relistAfter": 3, "manipulationTriggerPercentage": 20 },
+    "SHARD_ALLIGATOR": { "maxPrice": 348000, "minProfit": 22500, "minPercentage": 11, "minBuyVolume": 100, "minSellVolume": 50, "maxBuyAmount": 5, "relistAfter": 3, "manipulationTriggerPercentage": 20 },
+    "HYPER_CATALYST": { "maxPrice": 238000, "minProfit": 10500, "minPercentage": 7, "minBuyVolume": 250, "minSellVolume": 70, "maxBuyAmount": 12, "relistAfter": 3, "manipulationTriggerPercentage": 20 },
+    "ENCHANTED_SEA_LUMIES": { "maxPrice": 148000, "minProfit": 3000, "minPercentage": 4, "minBuyVolume": 2210, "minSellVolume": 910, "maxBuyAmount": 47, "relistAfter": 3, "manipulationTriggerPercentage": 20 }
+  }
+}

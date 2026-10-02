@@ -1,0 +1,30 @@
+{
+  "blacklist": [
+    "CACTUS_FLOWER",
+    "FINE_SAPPHIRE_GEM",
+    "HEAVY_PEARL",
+    "INFERNO_FUEL_BLOCK",
+    "SALTED_SUNFLOWER_SEEDS",
+    "SHARD_GECKO",
+    "SHARD_MANTIS_SHRIMP",
+    "SHELLWISE",
+    "TREASURITE"
+  ],
+  "whitelist": {},
+  "selectiveBuys": {
+    "FLEXBONE": { "maxPrice": 281000, "minProfit": 5500, "minPercentage": 4, "minBuyVolume": 1030, "minSellVolume": 730, "maxBuyAmount": 28, "relistAfter": 3, "manipulationTriggerPercentage": 20 },
+    "CHORUS_FRUIT": { "maxPrice": 466000, "minProfit": 39500, "minPercentage": 12, "minBuyVolume": 160, "minSellVolume": 60, "maxBuyAmount": 10, "relistAfter": 3, "manipulationTriggerPercentage": 20 },
+    "CORLEONITE": { "maxPrice": 951000, "minProfit": 37000, "minPercentage": 6, "minBuyVolume": 50, "minSellVolume": 50, "maxBuyAmount": 7, "relistAfter": 3, "manipulationTriggerPercentage": 20 },
+    "SCORCHED_POWER_CRYSTAL": { "maxPrice": 905000, "minProfit": 62000, "minPercentage": 11, "minBuyVolume": 50, "minSellVolume": 50, "maxBuyAmount": 4, "relistAfter": 3, "manipulationTriggerPercentage": 20 },
+    "SHARD_OSEDAX": { "maxPrice": 308000, "minProfit": 14500, "minPercentage": 8, "minBuyVolume": 140, "minSellVolume": 50, "maxBuyAmount": 5, "relistAfter": 3, "manipulationTriggerPercentage": 20 },
+    "ENCHANTED_INK_SACK": { "maxPrice": 152000, "minProfit": 3000, "minPercentage": 4, "minBuyVolume": 100, "minSellVolume": 160, "maxBuyAmount": 18, "relistAfter": 3, "manipulationTriggerPercentage": 20 },
+    "HOT_POTATO_BOOK": { "maxPrice": 101000, "minProfit": 3500, "minPercentage": 6, "minBuyVolume": 810, "minSellVolume": 120, "maxBuyAmount": 22, "relistAfter": 3, "manipulationTriggerPercentage": 20 },
+    "PLASMA": { "maxPrice": 242000, "minProfit": 6500, "minPercentage": 4, "minBuyVolume": 170, "minSellVolume": 150, "maxBuyAmount": 27, "relistAfter": 3, "manipulationTriggerPercentage": 20 },
+    "SHARD_VIPER": { "maxPrice": 157000, "minProfit": 4000, "minPercentage": 4, "minBuyVolume": 150, "minSellVolume": 130, "maxBuyAmount": 24, "relistAfter": 3, "manipulationTriggerPercentage": 20 },
+    "WATER_HYACINTH": { "maxPrice": 1110000, "minProfit": 30000, "minPercentage": 4, "minBuyVolume": 50, "minSellVolume": 50, "maxBuyAmount": 5, "relistAfter": 3, "manipulationTriggerPercentage": 20 },
+    "SHARD_HAWK": { "maxPrice": 289000, "minProfit": 11500, "minPercentage": 7, "minBuyVolume": 290, "minSellVolume": 50, "maxBuyAmount": 4, "relistAfter": 3, "manipulationTriggerPercentage": 20 },
+    "SHARD_XYZ": { "maxPrice": 59000, "minProfit": 6000, "minPercentage": 12, "minBuyVolume": 170, "minSellVolume": 80, "maxBuyAmount": 14, "relistAfter": 3, "manipulationTriggerPercentage": 20 },
+    "GIANT_FRAGMENT_BIGFOOT": { "maxPrice": 59000, "minProfit": 5500, "minPercentage": 12, "minBuyVolume": 50, "minSellVolume": 50, "maxBuyAmount": 5, "relistAfter": 3, "manipulationTriggerPercentage": 20 },
+    "CHLORONITE": { "maxPrice": 280000, "minProfit": 16500, "minPercentage": 10, "minBuyVolume": 80, "minSellVolume": 50, "maxBuyAmount": 5, "relistAfter": 3, "manipulationTriggerPercentage": 20 }
+  }
+}

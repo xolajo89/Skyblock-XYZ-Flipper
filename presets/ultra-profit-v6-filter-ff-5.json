@@ -1,0 +1,16 @@
+{
+  "whitelistOnly": true,
+  "blacklist": [],
+  "whitelist": {
+    "BLUE_ICE_HUNK": {},
+    "SHARD_KRAKEN": {},
+    "SHARD_FLY": {},
+    "GLACITE_JEWEL": {},
+    "ENCHANTED_FERMENTED_SPIDER_EYE": {},
+    "STRONG_FRAGMENT": {},
+    "ENCHANTED_SUGAR_CANE": {},
+    "SUMMONING_EYE": {},
+    "SHARD_ALLIGATOR": {}
+  },
+  "selectiveBuys": {}
+}

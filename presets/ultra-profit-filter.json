@@ -1,0 +1,42 @@
+{
+  "blacklist": [
+    "CACTUS_FLOWER",
+    "CANE_KNOT",
+    "ENCHANTED_QUARTZ_BLOCK",
+    "JUNGLE_KEY",
+    "FIGSTONE",
+    "MIRIA_PRIZE",
+    "SHARD_KEELED_SLUG"
+  ],
+  "whitelist": {},
+  "selectiveBuys": {
+    "ENCHANTED_GLOWSTONE": { "maxPrice": 85000, "minProfit": 3500, "minPercentage": 7, "minBuyVolume": 100, "minSellVolume": 100, "relistAfter": 3, "manipulationTriggerPercentage": 20 },
+    "SHARD_CRICKET": { "maxPrice": 140000, "minProfit": 10000, "minPercentage": 10, "minBuyVolume": 100, "minSellVolume": 75, "relistAfter": 3, "manipulationTriggerPercentage": 20 },
+    "PRECURSOR_GEAR": { "maxPrice": 520000, "minProfit": 30000, "minPercentage": 8, "minBuyVolume": 50, "minSellVolume": 50, "relistAfter": 3, "manipulationTriggerPercentage": 20 },
+    "SHARD_FLY": { "maxPrice": 250000, "minProfit": 10000, "minPercentage": 7, "minBuyVolume": 150, "minSellVolume": 75, "relistAfter": 3, "manipulationTriggerPercentage": 20 },
+    "GOLDEN_TOOTH": { "maxPrice": 145000, "minProfit": 7000, "minPercentage": 7, "minBuyVolume": 150, "minSellVolume": 60, "relistAfter": 3, "manipulationTriggerPercentage": 20 },
+    "SHARD_TORRID": { "maxPrice": 190000, "minProfit": 12000, "minPercentage": 10, "minBuyVolume": 100, "minSellVolume": 60, "relistAfter": 3, "manipulationTriggerPercentage": 20 },
+    "SHARD_GECKO": { "maxPrice": 880000, "minProfit": 40000, "minPercentage": 10, "minBuyVolume": 75, "minSellVolume": 50, "relistAfter": 3, "manipulationTriggerPercentage": 20 },
+    "STRONG_FRAGMENT": { "maxPrice": 60000, "minProfit": 3500, "minPercentage": 9, "minBuyVolume": 100, "minSellVolume": 100, "relistAfter": 3, "manipulationTriggerPercentage": 20 },
+    "DESIGNER_COFFEE_BEANS": { "maxPrice": 525000, "minProfit": 30000, "minPercentage": 8, "minBuyVolume": 50, "minSellVolume": 75, "relistAfter": 3, "manipulationTriggerPercentage": 20 },
+    "SUBLIME_SILK": { "maxPrice": 765000, "minProfit": 30000, "minPercentage": 7, "minBuyVolume": 75, "minSellVolume": 50, "relistAfter": 3, "manipulationTriggerPercentage": 20 },
+    "SHARD_HIDEONWALL": { "maxPrice": 150000, "minProfit": 5000, "minPercentage": 7, "minBuyVolume": 100, "minSellVolume": 100, "relistAfter": 3, "manipulationTriggerPercentage": 20 },
+    "SHARD_MOTH": { "maxPrice": 160000, "minProfit": 9000, "minPercentage": 9, "minBuyVolume": 100, "minSellVolume": 75, "relistAfter": 3, "manipulationTriggerPercentage": 20 },
+    "SHARD_MANTIS_SHRIMP": { "maxPrice": 55000, "minProfit": 3000, "minPercentage": 7, "minBuyVolume": 150, "minSellVolume": 100, "relistAfter": 3, "manipulationTriggerPercentage": 20 },
+    "SHARD_DOOMSPIRAL": { "maxPrice": 150000, "minProfit": 7000, "minPercentage": 8, "minBuyVolume": 100, "minSellVolume": 60, "relistAfter": 3, "manipulationTriggerPercentage": 20 },
+    "HEAVY_PEARL": { "maxPrice": 305000, "minProfit": 7000, "minPercentage": 7, "minBuyVolume": 100, "minSellVolume": 75, "relistAfter": 3, "manipulationTriggerPercentage": 20 },
+    "GIANT_FRAGMENT_DIAMOND": { "maxPrice": 950000, "minProfit": 35000, "minPercentage": 8, "minBuyVolume": 50, "minSellVolume": 50, "relistAfter": 3, "manipulationTriggerPercentage": 20 },
+    "FINE_SAPPHIRE_GEM": { "maxPrice": 35000, "minProfit": 3000, "minPercentage": 8, "minBuyVolume": 250, "minSellVolume": 250, "relistAfter": 3, "manipulationTriggerPercentage": 20 },
+    "FINE_PERIDOT_GEM": { "maxPrice": 55000, "minProfit": 3000, "minPercentage": 7, "minBuyVolume": 250, "minSellVolume": 250, "relistAfter": 3, "manipulationTriggerPercentage": 20 },
+    "TREASURITE": { "maxPrice": 100000, "minProfit": 3000, "minPercentage": 7, "minBuyVolume": 150, "minSellVolume": 150, "relistAfter": 3, "manipulationTriggerPercentage": 20 },
+    "FLORAL_GELATIN": { "maxPrice": 380000, "minProfit": 15000, "minPercentage": 7, "minBuyVolume": 100, "minSellVolume": 100, "relistAfter": 3, "manipulationTriggerPercentage": 20 },
+    "BLUE_RING": { "maxPrice": 200000, "minProfit": 10000, "minPercentage": 8, "minBuyVolume": 60, "minSellVolume": 75, "relistAfter": 3, "manipulationTriggerPercentage": 20 },
+    "LIVID_FRAGMENT": { "maxPrice": 150000, "minProfit": 7000, "minPercentage": 8, "minBuyVolume": 60, "minSellVolume": 60, "relistAfter": 3, "manipulationTriggerPercentage": 20 },
+    "BOTROOT": { "maxPrice": 165000, "minProfit": 7000, "minPercentage": 8, "minBuyVolume": 50, "minSellVolume": 75, "relistAfter": 3, "manipulationTriggerPercentage": 20 },
+    "SHARD_OSEDAX": { "maxPrice": 320000, "minProfit": 12000, "minPercentage": 7, "minBuyVolume": 100, "minSellVolume": 50, "relistAfter": 3, "manipulationTriggerPercentage": 20 },
+    "PRECURSOR_APPARATUS": { "maxPrice": 1175000, "minProfit": 40000, "minPercentage": 7, "minBuyVolume": 100, "minSellVolume": 50, "relistAfter": 3, "manipulationTriggerPercentage": 20 },
+    "ENCHANTED_INK_SACK": { "maxPrice": 170000, "minProfit": 6000, "minPercentage": 7, "minBuyVolume": 75, "minSellVolume": 100, "relistAfter": 3, "manipulationTriggerPercentage": 20 },
+    "FINE_AMETHYST_GEM": { "maxPrice": 40000, "minProfit": 3000, "minPercentage": 7, "minBuyVolume": 200, "minSellVolume": 200, "relistAfter": 3, "manipulationTriggerPercentage": 20 },
+    "SHARD_RABBIT_MAFIOSO": { "maxPrice": 530000, "minProfit": 40000, "minPercentage": 10, "minBuyVolume": 75, "minSellVolume": 50, "relistAfter": 3, "manipulationTriggerPercentage": 20 }
+  }
+}

@@ -1,0 +1,10 @@
+{
+  "name": "xyz-flipper",
+  "version": "0.9.213",
+  "description": "XYZ FLIPPER portable desktop client",
+  "main": "src/main.js",
+  "author": "XYZ FLIPPER",
+  "license": "UNLICENSED",
+  "private": true,
+  "dependencies": {}
+}

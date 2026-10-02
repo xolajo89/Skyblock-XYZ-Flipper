@@ -1,0 +1,61 @@
+{
+  "clearOnStart": false,
+  "server": {
+    "host": "mc.hypixel.net"
+  },
+  "profit": {
+    "min": 5000,
+    "max": 100000,
+    "minPercentage": 5
+  },
+  "price": {
+    "maxPricePerUnitBuy": 25000000,
+    "maxPricePerUnitSell": 50000000,
+    "minPricePerUnitBuy": 500,
+    "manipulationTriggerPercentage": 20,
+    "temporaryBlacklistDuration": 30
+  },
+  "orders": {
+    "maxBuyOrders": 7,
+    "maxAmountOfSellOffers": 7,
+    "sortBy": "coinsPerHour",
+    "relistAfterType": "orderAmount",
+    "relistAfter": 3,
+    "relistWorthThreshold": 2000000
+  },
+  "volume": {
+    "minBuy": 75,
+    "minSell": 75
+  },
+  "purse": {
+    "minPurse": 1500000,
+    "maxSpentPerOrder": 11000000
+  },
+  "proxy": {
+    "enabled": false,
+    "ip": "",
+    "port": 0,
+    "country": "",
+    "username": "",
+    "password": ""
+  },
+  "webpage": {
+    "username": "xyz",
+    "password": ""
+  },
+  "dynamicRest": {
+    "enabled": false,
+    "workMinutes": {
+      "min": 120,
+      "max": 150
+    },
+    "breakMinutes": {
+      "min": 15,
+      "max": 25
+    }
+  },
+  "cookie": {
+    "purchaseThresholdHours": 24
+  },
+  "selectiveBuys": false
+}

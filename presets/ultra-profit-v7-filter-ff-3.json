@@ -1,0 +1,19 @@
+{
+  "whitelistOnly": true,
+  "blacklist": [],
+  "whitelist": {
+    "THUNDER_SHARDS": {},
+    "MANGCORE": {},
+    "ENCHANTED_COAL_BLOCK": {},
+    "SHARD_KRAKEN": {},
+    "FINE_AMETHYST_GEM": {},
+    "COMPACTED_SUNFLOWER": {},
+    "FOUL_FLESH": {},
+    "SHARD_SHELLWISE": {},
+    "SHARD_SEPIALOT": {},
+    "PLASMA": {},
+    "FINE_CITRINE_GEM": {},
+    "SHARD_DOOMSPIRAL": {}
+  },
+  "selectiveBuys": {}
+}

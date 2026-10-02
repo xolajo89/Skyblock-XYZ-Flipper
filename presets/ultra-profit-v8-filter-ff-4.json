@@ -1,0 +1,15 @@
+{
+  "whitelistOnly": true,
+  "blacklist": [],
+  "whitelist": {
+    "TIGER_SHARK_TOOTH": {},
+    "SUPERIOR_FRAGMENT": {},
+    "REVENANT_VISCERA": {},
+    "SHARD_HIDEONLEAF": {},
+    "SHARD_CORALOT": {},
+    "SHARD_BONZO": {},
+    "ENCHANTED_SEA_LUMIES": {},
+    "HEAVY_PEARL": {}
+  },
+  "selectiveBuys": {}
+}

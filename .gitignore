@@ -1,0 +1,17 @@
+node_modules/
+dist/
+dist-*/
+release/
+out/
+*.log
+*.asar
+*.exe
+*.dll
+*.zip
+*.7z
+*.rar
+.env
+.env.*
+!.env.example
+*auth-cache*
+*token*

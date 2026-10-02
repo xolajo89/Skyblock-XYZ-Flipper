@@ -1,0 +1,15 @@
+{
+  "whitelistOnly": true,
+  "blacklist": [],
+  "whitelist": {
+    "GOLDEN_TOOTH": {},
+    "HOT_POTATO_BOOK": {},
+    "ENCHANTED_GRILLED_PORK": {},
+    "CARROT_ZEST": {},
+    "PLANT_MATTER": {},
+    "SUSPICIOUS_SCRAP": {},
+    "SHARD_FLY": {},
+    "ENCHANTED_INK_SACK": {}
+  },
+  "selectiveBuys": {}
+}

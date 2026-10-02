@@ -1,0 +1,17 @@
+{
+  "whitelistOnly": true,
+  "blacklist": [],
+  "whitelist": {
+    "GRIFFIN_FEATHER": {},
+    "HEAVY_PEARL": {},
+    "MELON_JUICE": {},
+    "BLUE_RING": {},
+    "REVENANT_VISCERA": {},
+    "THUNDER_SHARDS": {},
+    "SHARD_CORALOT": {},
+    "ENCHANTED_GLOWSTONE": {},
+    "SHARD_HIDEONSUN": {},
+    "ENCHANTED_QUARTZ_BLOCK": {}
+  },
+  "selectiveBuys": {}
+}
