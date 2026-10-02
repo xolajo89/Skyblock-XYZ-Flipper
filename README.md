@@ -1,6 +1,7 @@
 # XYZ FLIPPER 0.9.213
 
 Portable Windows client for managing XYZ FLIPPER instances.
+Hypixel bazaar macro.
 
 ## Usage
 
