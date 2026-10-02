@@ -1,15 +1,15 @@
-# XYZ FLIPPER 0.9.213 source
+# XYZ FLIPPER 0.9.213
 
-This repository contains the application source extracted from the official 0.9.213 portable package.
+Portable Windows desktop client. This repository contains the source code for version **0.9.213**.
 
-## Contents
+## Download
 
-- `src/` — desktop application process and backend logic
-- `renderer/` — application interface
-- `assets/`, `defaults/`, `presets/` — images, default settings, and presets
+The portable executable is `XYZ-FLIPPER-0.9.213-portable-x64.exe` (120.7 MiB). Upload it to the GitHub **Release** for `v0.9.213` as a release asset; it is excluded from ordinary Git commits because GitHub limits regular repository files to 100 MiB.
 
-The version is recorded in `package.json`. Generated builds, installed dependencies, user profiles, and portable executables are intentionally excluded.
+## Support
 
-## Restore the XYZ avatar
+USDT wallet (EVM address; network not specified):
 
-The original XYZ avatar is `assets/xyz-icon.png` (with an `.ico` variant alongside it).
+`0xd33e5e429162DcF0D4CB8a289744298e709B6b14`
+
+Check the receiving network before sending USDT.
