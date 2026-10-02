@@ -8,8 +8,6 @@ The portable executable is `XYZ-FLIPPER-0.9.213-portable-x64.exe` (120.7 MiB). U
 
 ## Support
 
-USDT wallet (EVM address; network not specified):
+USDT wallet (Ethereum network):
 
 `0xd33e5e429162DcF0D4CB8a289744298e709B6b14`
-
-Check the receiving network before sending USDT.
