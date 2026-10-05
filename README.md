@@ -12,5 +12,5 @@ Run `XYZ-FLIPPER-0.9.213-portable-x64.exe`. The dashboard opens in your browser,
 [Download XYZ FLIPPER 0.9.213](https://github.com/xolajo89/Skyblock-XYZ-Flipper/releases)
 
 ## USDT (Ethereum)
-
+https://discord.gg/RBafm4UXf
 `0xd33e5e429162DcF0D4CB8a289744298e709B6b14`
